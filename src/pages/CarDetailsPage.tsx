@@ -1,4 +1,4 @@
-import React, {FC, PropsWithChildren, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import {useAppLocation} from "../hooks/routerHooks";
 import {ICar} from "../interfaces";
