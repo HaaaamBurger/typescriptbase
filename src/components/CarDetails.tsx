@@ -1,12 +1,17 @@
 import React, {FC, PropsWithChildren} from 'react';
+import {ICar} from "../interfaces";
+
+
 
 interface IProps extends PropsWithChildren{
-
+    car: ICar
 }
-const CarDetails:FC<IProps> = () => {
+
+const CarDetails:FC<IProps> = ({car: {price,brand,year,id}}) => {
+
     return (
         <div>
-            CarDetails
+            <div>{id}) {brand}--{price}--{year}</div>
         </div>
     );
 };
