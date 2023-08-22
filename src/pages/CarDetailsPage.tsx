@@ -17,7 +17,7 @@ const CarDetailsPage = () => {
         if (state) {
             setCar(state)
         } else {
-            carsService.getById(+id)
+            carsService.getById(+id).then(({data}) => setCar(data))
         }
     },[id,state])
     return (
