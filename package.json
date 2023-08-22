@@ -17,7 +17,8 @@
     "web-vitals": "^2.1.4",
     "axios": "^1.4.0",
     "react-router-dom": "^6.15.0",
-    "@reduxjs/toolkit": "^1.9.5"
+    "@reduxjs/toolkit": "^1.9.5",
+    "react-hook-form": "^7.45.4"
   },
   "scripts": {
     "start": "react-scripts start",
