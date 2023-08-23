@@ -33,7 +33,7 @@ const CarsForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit(!update ? save : update)}>
+        <form onSubmit={handleSubmit(!setCarForUpdate ? save : update)}>
             <input type="text" placeholder={'brand'} {...register('brand')}/>
             <input type="text" placeholder={'price'} {...register('price')}/>
             <input type="text" placeholder={'year'} {...register('year')}/>
