@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {useDispatch} from "react-redux";
-import {useAppDisptach, useAppSelector} from "../../reduxHooks/reduxHooks";
+
 import {carsAction} from "../../redux";
 import {Car} from "../Car";
+import {useAppDisptach, useAppSelector} from "../../reduxHooks";
 
 const Cars = () => {
     const dispatch = useAppDisptach();
