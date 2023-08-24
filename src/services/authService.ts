@@ -1,0 +1,37 @@
+import {IAuth} from "../interfaces/authInterface";
+import {apiService, IRes} from "./apiService";
+import {IUser} from "../interfaces/userInterface";
+import {urls} from "../constants";
+import {ITokens} from "../interfaces/tokensInterface";
+
+const accessTokenKey = 'access';
+const refreshTokenKey = 'refresh';
+
+const authService = {
+    register(user: IAuth): IRes<IUser> {
+        return apiService.post(urls.auth.register, user)
+    },
+    async login(user: IAuth): Promise<void> {
+        const {data} = await apiService.post<ITokens>(urls.auth.login, user);
+        this.setTokens(data);
+    },
+    me(): IRes<IUser> {
+        return apiService.get(urls.auth.me)
+    },
+    setTokens({refresh, access}: ITokens): void {
+        localStorage.setItem(accessTokenKey, access);
+        localStorage.setItem(refreshTokenKey, refresh);
+    },
+    getAccessToken(): string {
+        return localStorage.getItem(accessTokenKey);
+    },
+    getRefreshToken(): string {
+        return localStorage.getItem(refreshTokenKey);
+    },
+    deleteTokens() {
+        localStorage.removeItem(accessTokenKey);
+        localStorage.removeItem(refreshTokenKey);
+    }
+}
+
+export {authService};
