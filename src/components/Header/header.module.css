@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    background-color: darkslategray;
+    font-size: 1.3em;
+}
+
+.Header a{
+    text-decoration: none;
+    color: azure;
+    margin: 0 30px;
+}
