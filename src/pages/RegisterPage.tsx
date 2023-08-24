@@ -24,7 +24,7 @@ const RegisterPage = () => {
             reset();
             navigate('/login');
         } else {
-            console.log(requestStatus)
+            console.log(requestStatus);
         }
     }
 

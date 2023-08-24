@@ -12,9 +12,11 @@ const authService = {
         return apiService.post(urls.auth.register, user)
     },
 
-    async login(user:IAuth):Promise<void>{
+    async login(user:IAuth):Promise<IUser>{
         const {data} = await apiService.post<ITokens>(urls.auth.login, user);
         this.setTokens(data);
+        const {data: me} = await this.me();
+        return me;
     },
 
     me():IRes<IUser>{
