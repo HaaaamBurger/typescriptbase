@@ -19,6 +19,12 @@ const authService = {
         return me;
     },
 
+    async refresh():Promise<void>{
+        const refresh = this.getRefreshToken();
+        const {data} = await apiService.post<ITokens>(urls.auth.refresh, {refresh});
+        this.setTokens(data);
+    },
+
     me():IRes<IUser>{
         return apiService.get(urls.auth.me);
     },
